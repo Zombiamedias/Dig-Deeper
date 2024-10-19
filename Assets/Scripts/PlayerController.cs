@@ -4,45 +4,79 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody controller;
-    public Animator animator;
+    Rigidbody2D playerRB;
+    Animator playerAnimator;
     // Vectors
     [SerializeField] Vector3 gravity;
     // Variables Float
-    [SerializeField] float movX;
-    float speed = 5.0f, speedRun = 20.0f, gravityScale= -9.8f;
+    [SerializeField] float movX, gravityModifier;
+    public LayerMask Ground;
+    float speed = 5.0f;
+    public float rayCastlong = 0.5f;
+
     // Variables Int
-    public int jumpForce;
+    public float jumpForce = 5.0f;
+    // Booleans
+
+    private bool isOnGrounded;
+    bool gameOver = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Component called
+        playerRB = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
+        // Fisicas physics
+        Physics.gravity *= gravityModifier;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Orientacion de la animacion
-        animator.SetFloat("Speed", Mathf.Abs(movX));
 
+        // Orientacion de la animacion
+        playerAnimator.SetFloat("Speed", Mathf.Abs(movX) * speed);
+
+
+        // Movimiento jugador
         MovePlayer();
-      
-    }
-    void JumpPlayer(){
-        gravity.y = Mathf.Sqrt(gravityScale * -2 *jumpForce);
-        
-    }
-    void MovePlayer(){
-        movX= Input.GetAxis("Horizontal")* speed;
-        transform.Translate(Vector3.right * Time.deltaTime * movX );
-        if (movX == -1)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, rayCastlong, Ground);
+        isOnGrounded = hit.collider != null;
+        if (Input.GetButtonDown("Jump") && isOnGrounded )
         {
-            
+            playerRB.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
+        // Change of position 
+        if (movX < 0)
+        {
+            transform.localScale = new Vector3(-5, 5, 0);
+        }
+        if (movX > 0)
+        {
+            transform.localScale = new Vector3(5, 5, 0);
         }
     }
-    void ApplyGravity()
+    // Movimiento
+    void MovePlayer()
     {
-        gravity.y += gravityScale * Time.deltaTime;
-        
+        movX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        transform.Translate(Vector3.right * movX);
     }
+    // Colisiones
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isOnGrounded = true;
+        }
+
+    }
+   
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * rayCastlong);
+    }
+
 }

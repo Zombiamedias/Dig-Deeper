@@ -122,9 +122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292cb61e871678f4fa3ed47467862179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
   gravity: {x: 0, y: 0, z: 0}
   movX: 0
+  Ground:
+    serializedVersion: 2
+    m_Bits: 8
+  rayCastlong: 0.5
   jumpForce: 0
 --- !u!50 &5017167174208633105
 Rigidbody2D:
