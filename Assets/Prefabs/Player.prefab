@@ -124,9 +124,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: {x: 0, y: 0, z: 0}
   movX: 0
+  gravityModifier: 0
   Ground:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   rayCastlong: 0.5
   jumpForce: 0
 --- !u!50 &5017167174208633105
