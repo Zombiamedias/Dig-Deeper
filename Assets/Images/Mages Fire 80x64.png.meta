@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +70,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,574 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mages Fire 80x64_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 280
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc31709bd0efa1a4da49f282863b4610
+      internalID: 1493471245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 280
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54efc197af444a44d914c497555a3a63
+      internalID: 1663320943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 280
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb5037c4ff2185448d07b4ee120cd47
+      internalID: 4547235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 280
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5d9d84dbac7314f9615c8d91cb19cb
+      internalID: 323177291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_4
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 280
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8201ebc5d60524c41bf24a03524c7cfb
+      internalID: -1623374347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_5
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 216
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f0dc4a5a2c2e2499006666cc7abbb5
+      internalID: 1889399815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 217
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e080946b126c4f6488d23b1759e8be55
+      internalID: -50626990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_7
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 216
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90dd643bea655c6448a60db67e1e8d0a
+      internalID: -678405448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_8
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 217
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10281323eb3e6d4baff69da097e99d9
+      internalID: 622595288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 217
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd3c75cd5edc644e97040d4c44d11d2
+      internalID: -1507542992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 153
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1332f8f634e66ef4bae7758708e26d7f
+      internalID: 1830035113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_11
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 143
+        width: 44
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad196e7a6b6ea247a665134ce03e835
+      internalID: -909503461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_12
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 118
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ae4345c896a9547a87e3bc5a95a2ae
+      internalID: 662661700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_13
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 142
+        width: 45
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65299f97e6c5eec4cbb7ad80132d2e94
+      internalID: 1174592621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_14
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 145
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df93cc9fafc898141afd6563791b36d8
+      internalID: -1050120775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_15
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 152
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e34bac7870cba149a367a8f43e77d89
+      internalID: 1038565349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_16
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 152
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403e47e540d8966488aee7a2b981f4a2
+      internalID: 1287600131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_17
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 88
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c029078ca358aac469c8d3ee2c23256e
+      internalID: 1969557594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_18
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 88
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d18cc47b2d82641a5d68612fc08f9f
+      internalID: -1009388511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_19
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 39
+        width: 33
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91504d77add6e3647a2ea58c591e8273
+      internalID: -1030469967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_20
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 88
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7261f9ed4f8517459ad99c26627bd92
+      internalID: -365714629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_21
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 88
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4d3b8d5bdc9ce428d4ba496f051243
+      internalID: 1536685304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_22
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 88
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35de52e146605844480a5d9013827e3d
+      internalID: 1414537126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_23
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 88
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5975771f9c820704c8e40470b19602bd
+      internalID: -1458781953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_24
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 24
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de04fddb53b26d4418aa5111b618dbfa
+      internalID: 1520004162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_25
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 24
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f372ace05b3c92843b4a18d9cc6db99d
+      internalID: -613730667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mages Fire 80x64_26
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 24
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f2980503e630f4791c4a963b891ed1
+      internalID: -124717385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +699,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mages Fire 80x64_0: 1493471245
+      Mages Fire 80x64_1: 1663320943
+      Mages Fire 80x64_10: 1830035113
+      Mages Fire 80x64_11: -909503461
+      Mages Fire 80x64_12: 662661700
+      Mages Fire 80x64_13: 1174592621
+      Mages Fire 80x64_14: -1050120775
+      Mages Fire 80x64_15: 1038565349
+      Mages Fire 80x64_16: 1287600131
+      Mages Fire 80x64_17: 1969557594
+      Mages Fire 80x64_18: -1009388511
+      Mages Fire 80x64_19: -1030469967
+      Mages Fire 80x64_2: 4547235
+      Mages Fire 80x64_20: -365714629
+      Mages Fire 80x64_21: 1536685304
+      Mages Fire 80x64_22: 1414537126
+      Mages Fire 80x64_23: -1458781953
+      Mages Fire 80x64_24: 1520004162
+      Mages Fire 80x64_25: -613730667
+      Mages Fire 80x64_26: -124717385
+      Mages Fire 80x64_3: 323177291
+      Mages Fire 80x64_4: -1623374347
+      Mages Fire 80x64_5: 1889399815
+      Mages Fire 80x64_6: -50626990
+      Mages Fire 80x64_7: -678405448
+      Mages Fire 80x64_8: 622595288
+      Mages Fire 80x64_9: -1507542992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
