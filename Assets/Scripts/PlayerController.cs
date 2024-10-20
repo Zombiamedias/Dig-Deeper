@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -11,15 +12,16 @@ public class PlayerController : MonoBehaviour
     // Variables Float
     [SerializeField] float movX, gravityModifier;
     public LayerMask Ground;
-    float speed = 5.0f;
-    public float rayCastlong = 0.5f;
+    public float speed = 3.0f;
+    
 
     // Variables Int
     public float jumpForce = 5.0f;
     // Booleans
 
-    private bool isOnGrounded;
-    bool gameOver = false;
+    private bool isOnGrounded = true;
+    // bool hasPowerUp;
+    // bool gameOver = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,47 +38,52 @@ public class PlayerController : MonoBehaviour
     {
 
         // Orientacion de la animacion
-        playerAnimator.SetFloat("Speed", Mathf.Abs(movX) * speed);
+        playerAnimator.SetFloat("xSpeed", Mathf.Abs(playerRB.velocity.x));
+        playerAnimator.SetFloat("ySpeed", playerRB.velocity.y);
+        
 
-
-        // Movimiento jugador
+        // movement player call
         MovePlayer();
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, rayCastlong, Ground);
-        isOnGrounded = hit.collider != null;
-        if (Input.GetButtonDown("Jump") && isOnGrounded )
+
+
+
+        if (Input.GetButtonDown("Jump") && isOnGrounded)
         {
             playerRB.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            isOnGrounded= false;
+            playerAnimator.SetBool("isJumping", !isOnGrounded);
         }
+
+        // Run 
+        
         // Change of position 
         if (movX < 0)
         {
-            transform.localScale = new Vector3(-5, 5, 0);
+            transform.localScale = new Vector3(-1.5f, 1.5f, 0);
         }
         if (movX > 0)
         {
-            transform.localScale = new Vector3(5, 5, 0);
+            transform.localScale = new Vector3(1.5f, 1.5f, 0);
         }
     }
+
+
     // Movimiento
     void MovePlayer()
     {
         movX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         transform.Translate(Vector3.right * movX);
     }
+
+
     // Colisiones
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGrounded = true;
+            playerAnimator.SetBool("isJumping", !isOnGrounded);
         }
-
+        
     }
-   
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * rayCastlong);
-    }
-
+    // Draw line vertical red for jump
 }
