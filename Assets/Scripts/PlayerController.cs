@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isOnGrounded)
         {
             playerRB.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            isOnGrounded= false;
+            //isOnGrounded= false;
             playerAnimator.SetBool("isJumping", !isOnGrounded);
         }
 
@@ -71,8 +71,10 @@ public class PlayerController : MonoBehaviour
     // Movimiento
     void MovePlayer()
     {
-        movX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        transform.Translate(Vector3.right * movX);
+        movX = Input.GetAxis("Horizontal");
+        //transform.Translate(Vector3.right * movX);
+        Vector2 newPosition = new Vector2(transform.position.x + movX * speed * Time.deltaTime, transform.position.y);
+        playerRB.MovePosition(newPosition);
     }
 
 
