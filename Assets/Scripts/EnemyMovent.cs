@@ -3,55 +3,71 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovent : MonoBehaviour
+
 {
-    private Rigidbody2D Rigidbody2D; // Se crea variable tipo Rigidbody para acceder a ese componente
-    private float horizontal; // Se crea variable tipo float para guardar el movimiento lateral
-    public float speed; // Se crea variable privada tipo float para modificar desde el inspector la velocidad de movimiento
-    public float jumpForce; // Se crea variable tipo float para guardar la fuerza del salto se puede modificar en el inspector
-    private bool grounded; // Se crea esta variable tipo booleana para saber si el jugador esta en el suelo  o no
-    
+    //public Rigidbody2D rigidbody2D;
+    public float speed = 2f; // Velocidad de movimiento
+    public float patrolDistance = 3f; // Distancia que recorre antes de cambiar de dirección
+    private bool movingRight = true; // Para saber en qué dirección está el enemigo
+    private Vector3 initialPosition; // Para almacenar la posición inicial del enemigo
+
     void Start()
     {
-        Rigidbody2D = GetComponent<Rigidbody2D>(); // Se inicializa la variable tipo Rigidbody para acceder a ese componente
+        initialPosition = transform.position; // Guardar la posición inicial del enemigo
     }
 
-    
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal"); // Movimiento laterales con flechas y letras del teclado "a" y "d"
-
-        if (horizontal < 0.0f) // Se crea un condicional que dice que si estamos llendo hacia la izquierda gire hacia la derecha y viceversa en 
-        {                       //caso que no se cumpla la condicion
-            transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-        }
-        else if (horizontal > 0.0f) 
-        {
-            transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        }
-        Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);// esto se codifico para que el salto no sobrepase el limite
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.1f)) // esto se codifico para que el salto no sobrepase el limite
-        {
-            grounded = true;
-        }
-        else
-        {
-            grounded= false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && grounded) // Se crea este condicional para que si se oprime la tecla espacio y grounded que es 
-        {                                                // la que verifica que el  jugador esta en el suelo son verdaderas salta
-            Jump();// llamamos el metodo de salto el cual se le aplica una fuerza
-        }
-
+        Patrol();
     }
 
-    private void Jump() // se crea metodo de salto
+    void Patrol()
     {
-        Rigidbody2D.AddForce(Vector2.up * jumpForce);
+        // Movimiento de izquierda a derecha en un área determinada
+        if (movingRight)
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            //rigidbody2D.AddForce(Vector2.right * speed * Time.deltaTime, ForceMode2D.Impulse);
+            if (transform.position.x >= initialPosition.x + patrolDistance)
+            {
+                movingRight = false; // Cambiar dirección
+                Flip();
+            }
+        }
+        if (movingRight == false) 
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            //rigidbody2D.AddForce(Vector2.left * speed * Time.deltaTime, ForceMode2D.Impulse);
+            if (transform.position.x <= initialPosition.x - patrolDistance)
+            {
+                movingRight = true; // Cambiar dirección
+                Flip();
+            }
+        }
     }
 
-    private void FixedUpdate()
+    // Método para voltear el sprite del enemigo
+    void Flip()
     {
-        Rigidbody2D.velocity = new Vector2(horizontal, Rigidbody2D.velocity.y);// Se modifica la velocidad del Rigidbody
+        Vector3 enemyScale = transform.localScale;
+        enemyScale.x *= -1;
+        transform.localScale = enemyScale;
+    }
+
+    // Si el player colisiona con el enemigo desde arriba, lo destruye
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Verificar si el player está cayendo sobre el enemigo
+            if (collision.relativeVelocity.y <= 0 && collision.transform.position.y > transform.position.y)
+            {
+                Destroy(gameObject); // Destruir el enemigo
+            }
+            else
+            {
+                // Aquí podrías agregar lógica para dañar al jugador
+            }
+        }
     }
 }
