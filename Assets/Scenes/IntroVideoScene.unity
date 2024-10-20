@@ -167,7 +167,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1353848679}
+<<<<<<< Updated upstream
   nextScene: SampleScene
+=======
+  audioListener: {fileID: 0}
+  nextScene: Game
+>>>>>>> Stashed changes
 --- !u!1 &1017498622
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +199,11 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017498622}
+<<<<<<< Updated upstream
   m_Enabled: 1
+=======
+  m_Enabled: 0
+>>>>>>> Stashed changes
 --- !u!20 &1017498624
 Camera:
   m_ObjectHideFlags: 0
