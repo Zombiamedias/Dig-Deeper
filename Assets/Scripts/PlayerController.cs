@@ -4,11 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{
+{ 
     Rigidbody2D playerRB;
     Animator playerAnimator;
     // Vectors
-    [SerializeField] Vector3 gravity;
     // Variables Float
     [SerializeField] float movX, gravityModifier;
     public LayerMask Ground;
@@ -29,7 +28,7 @@ public class PlayerController : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         // Fisicas physics
-        Physics.gravity *= gravityModifier;
+        //Physics.gravity *= gravityModifier;
 
     }
 
@@ -72,20 +71,29 @@ public class PlayerController : MonoBehaviour
     void MovePlayer()
     {
         movX = Input.GetAxis("Horizontal");
-        //transform.Translate(Vector3.right * movX);
-        Vector2 newPosition = new Vector2(transform.position.x + movX * speed * Time.deltaTime, transform.position.y);
-        playerRB.MovePosition(newPosition);
+        playerRB.velocity= new Vector2 (movX * speed, playerRB.velocity.y);
+        
     }
 
 
     // Colisiones
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGrounded = true;
             playerAnimator.SetBool("isJumping", !isOnGrounded);
         }
+        }
+
+      private void OnCollisionExit2D(Collision2D collision)
+       {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGrounded = false;
+            
+        }
         
     }
     // Draw line vertical red for jump
 }
+
