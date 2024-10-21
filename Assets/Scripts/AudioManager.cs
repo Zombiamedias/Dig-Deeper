@@ -1,38 +1,48 @@
 using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
-    [SerializeField] AudioSource musicSource, fxSource;
-    private void Awake() 
+    public static AudioManager Instance { get; private set; }
+
+    [Header("Música de fondo")]
+    public AudioSource backgroundMusic;
+    public AudioClip[] backgroundMusicClips;
+
+    [Header("Efectos de sonido")]
+    public AudioSource soundEffectSource;
+    public AudioClip[] soundEffectClips;
+
+    private void Awake()
     {
-        // Singleton Pattern para tener una única instancia de AudioManager
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
     }
-    // Método para reproducir efectos de sonido a partir de un AudioSource
-    public void PlaySFX(AudioSource source)
+    private void Start()
     {
-        if(source != null)
+        PlayRandomBackgroundMusic();
+    }
+    public void PlayRandomBackgroundMusic()
+    {
+        if (backgroundMusicClips.Length > 0)
         {
-            source.Play(); // Reproduce el AudioSource que contiene el sonido FX
+            int randomIndex = Random.Range(0, backgroundMusicClips.Length);
+            backgroundMusic.clip = backgroundMusicClips[randomIndex];
+            backgroundMusic.Play();
         }
     }
-    // Método para reproducir música a partir de un AudioSource
-    public void PlayMusic(AudioSource source)
+    public void PlayRandomSoundEffect()
     {
-        if(source != null)
+        if (soundEffectClips.Length > 0)
         {
-            musicSource.Stop(); // Detén la música actual
-            musicSource.clip = source.clip; // Asigna el clip del nuevo AudioSource
-            musicSource.Play(); // Reproduce la nueva música
-            musicSource.loop = true; // Establece la música para que se reproduzca en bucle
+            int randomIndex = Random.Range(0, soundEffectClips.Length);
+            soundEffectSource.clip = soundEffectClips[randomIndex];
+            soundEffectSource.Play();
         }
     }
 }

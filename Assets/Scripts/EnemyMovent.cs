@@ -7,13 +7,13 @@ public class EnemyMovent : MonoBehaviour
 {
     //public Rigidbody2D rigidbody2D;
     public float speed = 2f; // Velocidad de movimiento
-    public float patrolDistance = 3f; // Distancia que recorre antes de cambiar de dirección
-    private bool movingRight = true; // Para saber en qué dirección está el enemigo
-    private Vector3 initialPosition; // Para almacenar la posición inicial del enemigo
+    public float patrolDistance = 3f; // Distancia que recorre antes de cambiar de direcciï¿½n
+    private bool movingRight = true; // Para saber en quï¿½ direcciï¿½n estï¿½ el enemigo
+    private Vector3 initialPosition; // Para almacenar la posiciï¿½n inicial del enemigo
 
     void Start()
     {
-        initialPosition = transform.position; // Guardar la posición inicial del enemigo
+        initialPosition = transform.position; // Guardar la posiciï¿½n inicial del enemigo
     }
 
     void Update()
@@ -23,14 +23,14 @@ public class EnemyMovent : MonoBehaviour
 
     void Patrol()
     {
-        // Movimiento de izquierda a derecha en un área determinada
+        // Movimiento de izquierda a derecha en un ï¿½rea determinada
         if (movingRight)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             //rigidbody2D.AddForce(Vector2.right * speed * Time.deltaTime, ForceMode2D.Impulse);
             if (transform.position.x >= initialPosition.x + patrolDistance)
             {
-                movingRight = false; // Cambiar dirección
+                movingRight = false; // Cambiar direcciï¿½n
                 Flip();
             }
         }
@@ -40,13 +40,13 @@ public class EnemyMovent : MonoBehaviour
             //rigidbody2D.AddForce(Vector2.left * speed * Time.deltaTime, ForceMode2D.Impulse);
             if (transform.position.x <= initialPosition.x - patrolDistance)
             {
-                movingRight = true; // Cambiar dirección
+                movingRight = true; // Cambiar direcciï¿½n
                 Flip();
             }
         }
     }
 
-    // Método para voltear el sprite del enemigo
+    // Mï¿½todo para voltear el sprite del enemigo
     void Flip()
     {
         Vector3 enemyScale = transform.localScale;
@@ -59,14 +59,15 @@ public class EnemyMovent : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Verificar si el player está cayendo sobre el enemigo
+            // Verificar si el player estï¿½ cayendo sobre el enemigo
             if (collision.relativeVelocity.y <= 0 && collision.transform.position.y > transform.position.y)
             {
                 Destroy(gameObject); // Destruir el enemigo
+                AudioManager.Instance.PlayRandomSoundEffect();
             }
             else
             {
-                // Aquí podrías agregar lógica para dañar al jugador
+                // Aquï¿½ podrï¿½as agregar lï¿½gica para daï¿½ar al jugador
             }
         }
     }
