@@ -1,20 +1,11 @@
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
-
 public class VideoManager : MonoBehaviour
 {
     public VideoPlayer videoPlayer;  // Asigna el VideoPlayer desde el Inspector
-<<<<<<< Updated upstream
-    public string nextScene = "SampleScene";  // Nombre de la siguiente escena
-
-    void Start()
-    {
-        videoPlayer.loopPointReached += EndReached;  // Cuando el video termina, llama a EndReached
-=======
     public AudioListener audioListener; // Asigna el AudioListener de la escena IntroVideoScene
     public string nextScene = "Game";  // Nombre de la siguiente escena
-
     void Start()
     {
         // Asegúrate de que el video comienza desde 0
@@ -23,16 +14,9 @@ public class VideoManager : MonoBehaviour
 
         // Comienza a reproducir el video
         videoPlayer.Play();
->>>>>>> Stashed changes
     }
-
     void EndReached(VideoPlayer vp)
     {
-<<<<<<< Updated upstream
-        SceneManager.LoadScene(nextScene);  // Carga la siguiente escena cuando el video termina
-    }
-}
-=======
         // Desactivar el AudioListener de la escena del video antes de cambiar
         if (audioListener != null)
         {
@@ -43,4 +27,3 @@ public class VideoManager : MonoBehaviour
         SceneManager.LoadScene(nextScene);
     }
 }
->>>>>>> Stashed changes
