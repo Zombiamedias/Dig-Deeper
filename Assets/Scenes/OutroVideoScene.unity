@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb73a701dea54794bb152b27ea1950b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outroVideoPlayer: {fileID: 1353848679}
 --- !u!1 &1017498622
 GameObject:
   m_ObjectHideFlags: 0
